@@ -11,12 +11,12 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //    CarTest();
+                CarTest();
             //    BrandTest();
             //    ColorTest();
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            var result = rentalManager.Add(new Rental { RentalId = 6, Id = 1, CustomerId = 3, RentDate = new DateTime(2021,03,01), ReturnDate = new DateTime(2021, 02, 12) });
-            Console.WriteLine(result.Message);
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //var result = rentalManager.Add(new Rental { RentalId = 6, Id = 1, CustomerId = 3, RentDate = new DateTime(2021,03,01), ReturnDate = new DateTime(2021, 02, 12) });
+            //Console.WriteLine(result.Message);
         }
         
         private static void CarAdd(CarManager carManager)
@@ -62,12 +62,12 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            var result = carManager.GetCarDetails();
+            var result = carManager.GetAll();
             if (result.Success==true)
             {
                 foreach (var join in result.Data)
                 {
-                    Console.WriteLine(join.Id + "/" + join.BrandName + " /" + join.ColorName + " /" + join.DailyPrice);
+                    Console.WriteLine(join.Id + "/" + join.CarName + " /" + join.Descriptions + " /" + join.DailyPrice);
                 } 
             }
             else
