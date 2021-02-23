@@ -68,8 +68,8 @@ namespace ConsoleUI
                 foreach (var join in result.Data)
                 {
                     Console.WriteLine(join.Id + "/" + join.CarName + " /" + join.Descriptions + " /" + join.DailyPrice);
-                } 
-            }
+                }
+            }//
             else
             {
                 Console.WriteLine(result.Message);
